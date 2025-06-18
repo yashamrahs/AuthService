@@ -28,12 +28,12 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "users")
 public class UserInfo {
 
     @Id
+    @Column(name = "user_id")
     private String userId;
 
     private String username;
@@ -46,5 +46,6 @@ public class UserInfo {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
+
     private Set<UserRole> roles = new HashSet<>();
 }
