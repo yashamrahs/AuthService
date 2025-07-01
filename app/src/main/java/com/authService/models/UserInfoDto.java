@@ -18,11 +18,15 @@ import lombok.Setter;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserInfoDto extends UserInfo{
 
+    @NonNull
     private String firstName;
 
+    @NonNull
     private String lastName;
 
+
     private Long phoneNumber;
+
 
     private String email;
 }
